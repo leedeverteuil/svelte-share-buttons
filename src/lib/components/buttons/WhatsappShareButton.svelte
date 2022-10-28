@@ -20,12 +20,12 @@
 			text: message ? message + ' ' + url : url
 		};
 
-		const params = Object.entries(paramsObj)
+		const paramsStr = Object.entries(paramsObj)
 			.filter(([, value]) => value ?? false)
 			.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
 			.join('&');
 
-		return params === '' ? apiUrl : `${apiUrl}?${params}`;
+		return paramsStr === '' ? apiUrl : `${apiUrl}?${paramsStr}`;
 	}
 
 	function onClick() {
