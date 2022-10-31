@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { buildParamsString, openUrl } from '$lib/util';
+
 	// Props
 	export let url: string; // The URL to share
 	export let hashtags: string[] = []; // Hashtags (excluding #)
@@ -7,11 +9,19 @@
 	export let viaUser: string = ''; // Referral user (including @)
 
 	// Constants
-	const apiUrlWithParams = buildApiUrl();
+	const API_URL = 'https://twitter.com/share';
+
+	// Reactives
+	$: apiUrlWithParams = buildUrl(url, hashtags, relatedUsers, title, viaUser);
 
 	// Functions
-	function buildApiUrl() {
-		const apiUrl = 'https://twitter.com/share';
+	function buildUrl(
+		url: string,
+		hashtags: string[],
+		relatedUsers: string[],
+		title: string,
+		viaUser: string
+	) {
 		const paramsObj = {
 			url,
 			...(hashtags.length > 0 ? { hashtags: hashtags.join(',') } : {}),
@@ -20,16 +30,13 @@
 			...(viaUser.length > 0 ? { via: viaUser.slice(1) } : {})
 		};
 
-		const paramsStr = Object.entries(paramsObj)
-			.filter(([, value]) => value ?? false)
-			.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
-			.join('&');
+		const paramsStr = buildParamsString(paramsObj);
 
-		return paramsStr === '' ? apiUrl : `${apiUrl}?${paramsStr}`;
+		return paramsStr === '' ? API_URL : `${API_URL}?${paramsStr}`;
 	}
 
 	function onClick() {
-		return window.open(apiUrlWithParams);
+		openUrl(apiUrlWithParams);
 	}
 </script>
 
