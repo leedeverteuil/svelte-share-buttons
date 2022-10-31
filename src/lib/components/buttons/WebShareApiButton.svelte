@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ShareFill from 'svelte-bootstrap-icons/lib/ShareFill.svelte';
 	import { hasWebShareApi } from '$lib/util';
 	import { createEventDispatcher } from 'svelte';
 
@@ -32,7 +33,11 @@
 </script>
 
 {#if webShareSupported}
-	<button on:click={onClick}>
-		<slot />
+	<button
+		on:click={onClick}
+		class="flex flex-row items-center justify-center p-2 rounded-full
+            bg-blue-500 text-blue-50 hover:bg-blue-600"
+		aria-label="Click to share">
+		<ShareFill class="w-4 h-4" />
 	</button>
 {/if}

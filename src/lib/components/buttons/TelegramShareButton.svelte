@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Telegram from 'svelte-bootstrap-icons/lib/Telegram.svelte';
 	import { buildParamsString, openUrl } from '$lib/util';
 
 	// Props
@@ -26,10 +27,11 @@
 	function onClick() {
 		openUrl(apiUrlWithParams);
 	}
-
-	// Svelte class prop
-	let className: string = '';
-	export { className as class };
 </script>
 
-<button on:click={onClick} class={className}> <slot /></button>
+<button
+	on:click={onClick}
+	class="text-[#37aee2] hover:text-[#2981a7] rounded-full"
+	aria-label="Share on Telegram">
+	<Telegram class="w-8 h-8" />
+</button>

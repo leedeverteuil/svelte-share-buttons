@@ -14,8 +14,7 @@
 </script>
 
 {#if webShareSupported}
-	<WebShareApiButton {url} {title} on:force-fallback={onFallback}
-		>Open Web Share</WebShareApiButton>
+	<WebShareApiButton {url} {title} on:force-fallback={onFallback} />
 {:else}
 	<!-- Other share buttons -->
 	<slot />

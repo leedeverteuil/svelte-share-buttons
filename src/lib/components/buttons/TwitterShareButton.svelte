@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Twitter from 'svelte-bootstrap-icons/lib/Twitter.svelte';
 	import { buildParamsString, openUrl } from '$lib/util';
 
 	// Props
@@ -40,6 +41,9 @@
 	}
 </script>
 
-<button on:click={onClick}>
-	<slot />
+<button
+	on:click={onClick}
+	class="bg-[#00aced] hover:bg-[#0180ae] text-white rounded-full p-2"
+	aria-label="Share on Twitter">
+	<Twitter class="w-4 h-4" />
 </button>

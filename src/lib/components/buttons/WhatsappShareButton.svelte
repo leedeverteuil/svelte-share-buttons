@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Whatsapp from 'svelte-bootstrap-icons/lib/Whatsapp.svelte';
 	import { browser } from '$app/environment';
 	import { buildParamsString, isMobileOrTablet, openUrl } from '$lib/util';
 
@@ -29,12 +30,11 @@
 	function onClick() {
 		openUrl(apiUrlWithParams);
 	}
-
-	// Svelte class prop
-	let className: string = '';
-	export { className as class };
 </script>
 
-<button on:click={onClick} class={className}>
-	<slot />
+<button
+	on:click={onClick}
+	class="bg-[#25D366] hover:bg-[#198f44] text-white rounded-full p-2"
+	aria-label="Share on Whatsapp">
+	<Whatsapp class="w-4 h-4" />
 </button>

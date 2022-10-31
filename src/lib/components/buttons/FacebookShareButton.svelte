@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Facebook from 'svelte-bootstrap-icons/lib/Facebook.svelte';
 	import { buildParamsString, openUrl } from '$lib/util';
 
 	// Props
@@ -28,10 +29,11 @@
 	function onClick() {
 		openUrl(apiUrlWithParams);
 	}
-
-	// Svelte class prop
-	let className: string = '';
-	export { className as class };
 </script>
 
-<button on:click={onClick} class={className}> <slot /></button>
+<button
+	on:click={onClick}
+	class="text-[#3b5998] hover:text-[#273b65] rounded-full"
+	aria-label="Share on Facebook">
+	<Facebook class="w-8 h-8" />
+</button>
