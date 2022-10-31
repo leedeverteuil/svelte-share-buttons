@@ -2,9 +2,9 @@
 	import { buildParamsString, openUrl } from '$lib/util';
 
 	// Props
-	export let hashtag: string = '';
-	export let quote: string = '';
-	export let url: string;
+	export let url: string; // URL to share
+	export let hashtag: string = ''; // Hashtag for post
+	export let quote: string = ''; // Not sure what this does
 
 	// Reactives
 	$: apiUrlWithParams = buildUrl(url, quote, hashtag);
