@@ -5,7 +5,7 @@
 
 	// Props
 	export let url: string;
-	export let title: string;
+	export let text: string;
 
 	// Constants
 	const dispatch = createEventDispatcher();
@@ -17,8 +17,8 @@
 	async function onClick() {
 		try {
 			navigator.share({
-				title,
-				text: `Shared from ${title}`,
+				title: text,
+				text: `Shared from ${text}`,
 				url
 			});
 		} catch (err) {

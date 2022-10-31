@@ -4,7 +4,7 @@
 
 	// Props
 	export let url: string;
-	export let title: string;
+	export let text: string;
 
 	// Variables
 	let webShareSupported = hasWebShareApi();
@@ -14,7 +14,7 @@
 </script>
 
 {#if webShareSupported}
-	<WebShareApiButton {url} {title} on:force-fallback={onFallback} />
+	<WebShareApiButton {url} {text} on:force-fallback={onFallback} />
 {:else}
 	<!-- Other share buttons -->
 	<slot />

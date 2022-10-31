@@ -9,19 +9,19 @@
 	const url = 'www.superchex.com';
 	const text = '10 Ways to Get Better Sleep';
 	const hashtag = 'superchex';
+	const hashtags = ['superchex'];
 </script>
 
-<ShareButtons {url} title={text}>
+<ShareButtons {url} {text}>
 	<div class="flex flex-row items-center justify-center gap-2">
 		<!-- Whatsapp -->
-		<WhatsappShareButton {url}>Share on WhatsApp</WhatsappShareButton>
+		<WhatsappShareButton {url} {text}>Share on WhatsApp</WhatsappShareButton>
 
 		<!-- Twitter -->
-		<TwitterShareButton {url} title={text} hashtags={[hashtag]}
-			>Share on Twitter</TwitterShareButton>
+		<TwitterShareButton {url} {text} {hashtags}>Share on Twitter</TwitterShareButton>
 
 		<!-- Facebook -->
-		<FacebookShareButton {url} hashtag="#{hashtag}">Share on Facebook</FacebookShareButton>
+		<FacebookShareButton {url} {hashtag}>Share on Facebook</FacebookShareButton>
 
 		<!-- Telegram -->
 		<TelegramShareButton {url} {text}>Share on Telegram</TelegramShareButton>

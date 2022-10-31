@@ -6,27 +6,27 @@
 	export let url: string; // The URL to share
 	export let hashtags: string[] = []; // Hashtags (excluding #)
 	export let relatedUsers: string[] = []; // Twitter accounts to recommend following (including @)
-	export let title: string = ''; // Title of the shared page
+	export let text: string = ''; // Title of the shared page
 	export let viaUser: string = ''; // Referral user (including @)
 
 	// Constants
 	const API_URL = 'https://twitter.com/share';
 
 	// Reactives
-	$: apiUrlWithParams = buildUrl(url, hashtags, relatedUsers, title, viaUser);
+	$: apiUrlWithParams = buildUrl(url, hashtags, relatedUsers, text, viaUser);
 
 	// Functions
 	function buildUrl(
 		url: string,
 		hashtags: string[],
 		relatedUsers: string[],
-		title: string,
+		text: string,
 		viaUser: string
 	) {
 		const paramsObj = {
 			url,
 			...(hashtags.length > 0 ? { hashtags: hashtags.join(',') } : {}),
-			text: title,
+			text,
 			...(relatedUsers.length > 0 ? { related: relatedUsers.join(',') } : {}),
 			...(viaUser.length > 0 ? { via: viaUser.slice(1) } : {})
 		};

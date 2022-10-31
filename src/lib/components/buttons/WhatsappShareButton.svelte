@@ -5,7 +5,7 @@
 
 	// Props
 	export let url: string; // The URL to share
-	export let message: string = ''; // Optional message to send with URL
+	export let text: string = ''; // Optional message to send with URL
 
 	// Constants
 	const API_URL =
@@ -14,12 +14,12 @@
 			: 'https://web.whatsapp.com/send';
 
 	// Reactives
-	$: apiUrlWithParams = buildUrl(url, message);
+	$: apiUrlWithParams = buildUrl(url, text);
 
 	// Functions
-	function buildUrl(url: string, message: string) {
+	function buildUrl(url: string, text: string) {
 		const paramsObj = {
-			text: message ? message + ' ' + url : url
+			text: text ? text + ' ' + url : url
 		};
 
 		const paramsStr = buildParamsString(paramsObj);

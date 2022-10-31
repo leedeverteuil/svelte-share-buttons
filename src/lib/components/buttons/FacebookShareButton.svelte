@@ -8,7 +8,8 @@
 	export let quote: string = ''; // Not sure what this does
 
 	// Reactives
-	$: apiUrlWithParams = buildUrl(url, quote, hashtag);
+	$: hashtagWithHash = `#${hashtag}`;
+	$: apiUrlWithParams = buildUrl(url, quote, hashtagWithHash);
 
 	// Constants
 	const API_URL = 'https://www.facebook.com/sharer/sharer.php';
