@@ -1,5 +1,5 @@
 {
-	"name": "svelte-share-icons",
+	"name": "svelte-share-buttons",
 	"version": "0.1.1",
 	"author": {
 		"name": "Lee de Verteuil",
@@ -34,8 +34,5 @@
 		"typescript": "^4.7.4",
 		"vite": "^3.1.0"
 	},
-	"type": "module",
-	"dependencies": {
-		"normalize.css": "^8.0.1"
-	}
+	"type": "module"
 }
