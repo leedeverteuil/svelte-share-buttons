@@ -15,23 +15,20 @@ Shows Web API button if available, if not then shows fallback buttons specified 
 	} from 'svelte-share';
 
 	const url = 'www.svelte.dev';
-	const title = 'Check out this cool framework';
-	const text = title;
-	const message = title;
-	const hashtag = '#svelte';
+	const text = 'Check out this cool framework';
 	const hashtags = ['svelte'];
 </script>
 
-<ShareButtons {url} {title}>
+<ShareButtons {url} {text}>
 	<div>
 		<!-- Whatsapp -->
-		<WhatsappShareButton {url} {message} />
+		<WhatsappShareButton {url} {text} />
 
 		<!-- Twitter -->
 		<TwitterShareButton {url} {text} {hashtags} />
 
 		<!-- Facebook -->
-		<FacebookShareButton {url} {hashtag} />
+		<FacebookShareButton {url} hashtag={hashtags[0]} />
 
 		<!-- Telegram -->
 		<TelegramShareButton {url} {text} />
@@ -41,5 +38,4 @@ Shows Web API button if available, if not then shows fallback buttons specified 
 
 ## Notes
 
-1. For `<TwitterShareButton />`, the `hashtags` prop takes an array of string hashtags, which exclude any leading "#".
-2. For `<FacebookShareButton />`, the `hashtag` prop takes a string hashtag, which includes a leading "#".
+1. All hashtags should exclude a leading "#".
