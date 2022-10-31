@@ -13,7 +13,11 @@
 </script>
 
 <ShareButtons {url} {text}>
-	<div>
+  <!-- Inner text for web share API button -->
+  Share
+
+  <!-- Fallback buttons -->
+	<div slot="fallback">
 		<!-- Whatsapp -->
 		<WhatsappShareButton {url} {text}>Share on WhatsApp</WhatsappShareButton>
 

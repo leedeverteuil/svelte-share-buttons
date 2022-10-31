@@ -14,8 +14,10 @@
 </script>
 
 {#if webShareSupported}
-	<WebShareApiButton {url} {text} on:force-fallback={onFallback} />
+	<WebShareApiButton {url} {text} on:force-fallback={onFallback}>
+		<slot />
+	</WebShareApiButton>
 {:else}
-	<!-- Other share buttons -->
-	<slot />
+	<!-- Fallback share buttons -->
+	<slot name="fallback" />
 {/if}
