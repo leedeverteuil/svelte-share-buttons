@@ -1,5 +1,6 @@
 <script lang="ts">
 	import FacebookShareButton from '$lib/components/buttons/FacebookShareButton.svelte';
+	import TelegramShareButton from '$lib/components/buttons/TelegramShareButton.svelte';
 	import TwitterShareButton from '$lib/components/buttons/TwitterShareButton.svelte';
 	import WhatsappShareButton from '$lib/components/buttons/WhatsappShareButton.svelte';
 </script>
@@ -14,3 +15,8 @@
 <!-- Facebook -->
 <FacebookShareButton url="www.superchex.com" hashtag="#superchex"
 	>Share on Facebook</FacebookShareButton>
+
+<!-- Telegram -->
+<TelegramShareButton url="www.superchex.com" text="Check out this cool site!">
+	Share on Telegram
+</TelegramShareButton>
