@@ -1,3 +1,5 @@
+import { browser } from '$app/environment';
+
 /** Returns true if the device is mobile or tablet */
 export function isMobileOrTablet(): boolean {
 	return /(android|iphone|ipad|mobile)/i.test(navigator.userAgent);
@@ -18,7 +20,12 @@ export function buildParamsString(paramsObj: { [k: string]: string | number }) {
 	);
 }
 
-// Open the URL in a separate tab/window
+/** Open the URL in a separate tab/window */
 export function openUrl(url: string) {
-  window.open(url);
+	window.open(url);
+}
+
+/** Check if web share API is available */
+export function hasWebShareApi() {
+	return browser && typeof navigator.share !== 'undefined';
 }
