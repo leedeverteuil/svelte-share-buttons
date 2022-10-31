@@ -1,5 +1,5 @@
 {
-	"name": "svelte-share",
+	"name": "svelte-share-icons",
 	"version": "0.1.0",
 	"author": {
 		"name": "Lee de Verteuil",
@@ -8,6 +8,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package",
+    "publish": "npm run build && npm publish ./package",
 		"prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
