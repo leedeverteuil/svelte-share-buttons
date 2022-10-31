@@ -12,7 +12,7 @@ Shows Web API button if available, if not then shows fallback buttons specified 
 		TwitterShareButton,
 		FacebookShareButton,
 		TelegramShareButton
-	} from 'svelte-share';
+	} from 'svelte-share-icons';
 
 	const url = 'www.svelte.dev';
 	const text = 'Check out this cool framework';
