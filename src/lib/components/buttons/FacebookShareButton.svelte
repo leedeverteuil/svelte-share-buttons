@@ -31,9 +31,7 @@
 	}
 </script>
 
-<button
-	on:click={onClick}
-	aria-label="Share on Facebook">
+<button on:click={onClick} aria-label="Share on Facebook">
 	<!-- Icon -->
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -46,15 +44,25 @@
 </button>
 
 <style>
-  button {
-    color: #3b5998;
-    border-radius: 100%;
-    transition: color 0.2s;
-  }
+	* {
+		box-sizing: border-box;
+	}
 
-  button:hover {
-    color: #273b65;
-  }
+	button {
+    background: none;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+		border: none;
+		color: #3b5998;
+		border-radius: 100%;
+		transition: color 0.2s;
+    cursor: pointer;
+	}
+
+	button:hover {
+		color: #273b65;
+	}
 
 	svg {
 		width: 2rem;

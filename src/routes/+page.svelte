@@ -13,7 +13,7 @@
 </script>
 
 <ShareButtons {url} {text}>
-	<div class="flex flex-row items-center justify-center gap-2">
+	<div>
 		<!-- Whatsapp -->
 		<WhatsappShareButton {url} {text}>Share on WhatsApp</WhatsappShareButton>
 
@@ -27,3 +27,13 @@
 		<TelegramShareButton {url} {text}>Share on Telegram</TelegramShareButton>
 	</div>
 </ShareButtons>
+
+<style>
+	div {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+		align-items: center;
+		justify-content: center;
+	}
+</style>

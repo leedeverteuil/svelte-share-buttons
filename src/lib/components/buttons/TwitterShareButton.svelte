@@ -53,12 +53,20 @@
 </button>
 
 <style>
+	* {
+		box-sizing: border-box;
+	}
+
 	button {
+		width: 2rem;
+		height: 2rem;
+		border: none;
 		background-color: #00aced;
 		color: #fff;
 		border-radius: 100%;
 		padding: 0.5rem;
 		transition: color 0.2s;
+		cursor: pointer;
 	}
 
 	button:hover {

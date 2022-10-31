@@ -44,12 +44,20 @@
 </button>
 
 <style>
+	* {
+		box-sizing: border-box;
+	}
+
 	button {
+		width: 2rem;
+		height: 2rem;
+		border: none;
 		background-color: #25d366;
 		color: #fff;
 		border-radius: 100%;
 		padding: 0.5rem;
 		transition: background-color 0.2s;
+		cursor: pointer;
 	}
 
 	button:hover {

@@ -46,7 +46,12 @@
 {/if}
 
 <style>
+	* {
+		box-sizing: border-box;
+	}
+
 	button {
+    border: none;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -56,7 +61,8 @@
 		border-radius: 100%;
 		background-color: #3b82f6;
 		color: #eff6ff;
-    transition: background-color 0.2s;
+		transition: background-color 0.2s;
+		cursor: pointer;
 	}
 
 	button:hover {

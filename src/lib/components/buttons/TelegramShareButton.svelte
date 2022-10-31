@@ -41,10 +41,20 @@
 </button>
 
 <style>
+	* {
+		box-sizing: border-box;
+	}
+
 	button {
+		background: none;
+		padding: 0;
+		width: 2rem;
+		height: 2rem;
+		border: none;
 		color: #37aee2;
 		transition: color 0.2s;
 		border-radius: 100%;
+    cursor: pointer;
 	}
 
 	button:hover {
