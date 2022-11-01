@@ -32,11 +32,6 @@
 </script>
 
 <button on:click={onClick} aria-label="Share on Whatsapp" {...$$restProps}>
-  <!-- Default text if no slot -->
-	{#if !$$slots.default}
-		Share on Whatsapp
-	{/if}
-
   <!-- Default slot -->
 	<slot />
 </button>
