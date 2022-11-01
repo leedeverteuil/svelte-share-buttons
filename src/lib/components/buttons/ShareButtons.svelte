@@ -14,7 +14,7 @@
 </script>
 
 {#if webShareSupported}
-	<WebShareApiButton {url} {text} on:force-fallback={onFallback}>
+	<WebShareApiButton {url} {text} on:force-fallback={onFallback} {...$$restProps}>
 		<slot />
 	</WebShareApiButton>
 {:else}
